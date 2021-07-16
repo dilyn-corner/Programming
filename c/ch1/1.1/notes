@@ -1,0 +1,51 @@
+## Getting Started ##
+
+hello.c:
+    #include <stdio.h>
+
+    main() {
+        printf("hello, world\n");
+    }
+
+This is a simple C program! Let's break it up into sections.
+
+> #include <stdio.h>
+
+C programs make use of functions. Because there are so many useful functions and
+definitions, they exist in *header* files. These header files allow you to use
+these useful things in your programs without actually writing them all up
+yourself! stdio.h includes many things already written up for you, including the
+ever so useful printf().
+
+> main() { ... }
+
+Every C program must include a function named main(). main() is, as the name
+suggests, the main function in the program. All functions include content
+wrapped in braces, and they all have names. There are a lot of features to know
+about functions, which you can learn more about in ../../ch4/4.1! In this case,
+main() is a function which takes no arguments.
+
+> printf("hello, world\n");
+
+printf() is itself a (library) function that simply prints the content in (...).
+In this case, it simply prints some characters. \n is a 'special character' (a
+single character, in fact), which means 'new line'. There's also \t (tab), \b
+(backspace), \" for double quotes (notice that \n is escaping our " - to print a
+'\', it is therefore '\\'). You could theoretically have three printf()'s:
+    printf("hello, ");
+    printf("world");
+    printf(\n);
+And you would get the same output!
+
+The ; at the end is important. in C, statements are terminated by ; - don't
+forget them!
+
+---
+
+## Exercises ##
+
+1.1: Run the "hello, world" program on your system. Experiment with leaving out parts
+of the program, to see what error messages you get. (bad_hello.c)
+
+1.2: Experiment to find out what happens when printf's argument string contains
+\c, where c is some character not in (n, t, b, \). (experiment.c)

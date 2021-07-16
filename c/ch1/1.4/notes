@@ -1,0 +1,35 @@
+## Symbolic Constants ##
+
+We can perform one more modification to our previous ../temp-conv.c program,
+leveraging something that can be quite powerful: symbolic constants.
+
+These constants are values defined somewhere within our program, that then
+replace any instance of that defined word with the corresponding value (though
+the replacement need not be a number!). These are useful in cases where the
+value may need to show up multiple times, or perhaps you want to set the value
+somewhere separately from the function it's used in... The use cases vary.
+
+Ultimately, it behaves like so:
+
+#define name replacement_text
+
+So #define statements are similar to include statements; they are handled by
+the C preprocessor and modify our program in useful ways so that we don't
+have to do it ourselves!
+
+    #include <stdio.h>
+
+    # define LOWER 0
+    # define UPPER 300
+    # define STEP  20
+
+    main() {
+        int fahr;
+
+        for (fahr = LOWER; fahr <= UPPER; fahr = fahr + STEP)
+        printf("%3d %6.1f\n", fahr, (5.0/9.0)*(fahr-32));
+    }
+
+LOWER, UPPER, and STEP are symbolic constants in this case, and they are NOT
+variables - thus, they have no declaration. Conventionally, symbolic constants
+are written in ALL CAPS so as to distinguish them from variable names.

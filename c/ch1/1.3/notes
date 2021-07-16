@@ -1,0 +1,37 @@
+## The For Statement ##
+
+There's an entirely different way we could have written our ../1.2/temp_conv.c!
+This different way would make use of a different form of control flow, known as
+the for statement. Here's how it would look:
+
+    #include <stdio.h>
+
+    main() {
+        int fahr;
+
+        for (fahr = 0; fahr <= 300; fahr = fahr + 20)
+        printf("%3d %6.1f\n", fahr, (5.0/9.0)*(fahr-32));
+    }
+
+This version is far more compact than our previous while() loop example.  For
+starters, we only end up declaring one variable! lower, upper, and step don't
+need to be declared here because ultimately, they're just constants.  Because of
+that, we can simply slam them all into a single condition that gets checked,
+along with an initial value to start with and a rule for how to modify the value
+we're evaluating the condition against!
+
+The largest change, however, is the fact that we don't ever even define celsius
+as a variable; indeed, it's simply evaluated within the printf(). This is one of
+the neat rules about C; if you could ever use the value of a variable of some
+type, you can use a more complicated expression *of that type*. Our only
+condition for our printf() is given by %6.1f, so our value need only be a
+floating point number. Conveniently, that's exactly what we want in the first
+place! Whether or not this is more readable is up to the individual, though
+contextually it certainly makes sense here.
+
+---
+
+## Exercises ##
+
+1.5: Modify the temperature conversion program to print the table in reverse
+order, that is, from 300 degrees to 0. (rev_temp_conv.c)

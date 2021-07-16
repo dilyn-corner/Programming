@@ -1,0 +1,154 @@
+## Character Input & Output ##
+
+Input and output supported by the standard library is very simple: text,
+regardless of where it comes from or where it goes, is dealth with as streams of
+cahracters.
+
+This text stream is a sequence of characters divided into lines; any given
+contains zero or more characters, and is terminated by a newline character.
+
+We have several functions for reading and writing a single character at a time,
+the simplest of which are getchar() and putchar().
+
+getchar() reads the NEXT input character from a text stream and returns that as
+its value. Thus,
+    c = getchar()
+means that c contains the next character of input. putchar(), by contract,
+prints a character. So
+    printchar(c)
+would print the value of the integer variable c.
+
+The simplest program leveraging these functions would be one which merely copies
+its input to its output:
+
+    #include <stdio.h>
+
+    main() {
+        int c;
+
+        c = getchar();
+        while (c != EOF) {
+            putchar(c);
+            c = getchar();
+        }
+    }
+
+any given character is merely a bit pattern; the integer type char could of
+course be used here for c, and it is specifically meant for storing character
+data. However, the int type is used here for a specific and subtle reason:
+How do you distinguish the end of your input stream from the rest of your data?
+The trick here is that getchar() returns a distinct value from any other
+character value when there is no more input. This magical value is called EOF,
+and is defined in stdio.h. On musl, this value is -1, though the value itself
+does not matter, so long as it is distinguishable from other char values.
+
+We could make this program even simpler, if we so chose:
+
+    #include <stdio.h>
+
+    main() {
+        int c;
+
+        while ((c = getchar()) != EOF)
+            putchar(c);
+        }
+
+Remember from ../1.2/notes that an assignment which is simply the expression of
+a value can itself be used within a larger expression *as that value*! So, since
+c is simply getchar(), we need not set c to getchar() outside of our while()
+loop, thus simplifying our program. Behold, minimalism.
+
+Note the use of () in our condition, however; precedence is important, and != is
+of higher precedence value than =. Thus, c = getchar() != EOF is actually c =
+(getchar() != EOF), which would merely set c to 0 or 1 depending on whether the
+input was EOF or not, and not the actual value of the input itself!
+
+---
+
+But copying isn't all we can do! We are smart; we can also count!
+
+    #include <stdio.h>
+
+    main() {
+        long nc;
+
+        nc = 0;
+        while (getchar() != EOF)
+            ++nc;
+        printf(%1d\n", nc);
+    }
+
+We have some new syntax here; ++nc is equivalent to nc = nc + 1, another way of
+incrementing is nc++, and decrementing is analogously --nc or nc--. The prefix
+or postfix syntax have different values in expressions, however!
+
+We use a long variable type here instead of our usual int because longs are at
+least as large as ints, but can be quite a bit larger (depending on the
+machine). Filling up the maximum value of an int (32767) can be quite trivial
+with a sufficiently motivated character stream. You could also use double if you
+anticipate even larger values.
+
+Another way to write this loop, this time using for():
+
+    #include <stdio.h>
+
+    main() {
+        double nc;
+
+        for (nc = 0; getchar() != EOF; ++nc)
+            ;
+        printf(%.0f\n", nc);
+    }
+
+%f is both for floats and doubles for printf; .0 supresses the decimal point.
+This is fine, because we know the decimal value is zero anyways.
+
+Notice the lone ; within the body of our for() loop! All of the work we would
+want to do is done in the for() condition check itself, and therefore we do not
+need to do anything inside the loop at all! However, C requires that a for()
+statement has a body. So we use the null statement to satisfy this requirement.
+
+---
+
+In the everconstant trend towards increasing complexity, we can count lines!
+Remembering that the standard library guarantees that lines end with a newline
+character, we can leverage this fact to make the problem hinge on counting a
+single character:
+
+    #include <stdio.h>
+
+    main() {
+        int c, nl;
+
+        nl = 0;
+        while ((c = getchar()) != EOF)
+            if (c == '\n')
+                ++nl;
+        printf("%d\n", nl);
+    }
+
+This program simply reads the input character by character. If the character we
+get is a newline character (the single character \n), then we increment nl.
+Otherwise, the while() loop continues as it was. Once the input is exhausted, we
+leave the while() loop and print how many new lines there were.
+
+Note the single quotes surrounding \n. '\n' means "the integer value of \n" - it
+denotes that we're talking about a character constant. It is more convenient to
+write 'A' than to write 65.
+
+---
+
+## Exercises ##
+
+1.6:  Verify that the expression getchar() != EOF is 0 or 1. (precedence.c)
+
+1.7:  Write a program to print the value of EOF. (eof.c)
+
+1.8:  Write a program to count blanks, tabs, and newlines. (count_btn.c)
+
+1.9:  Write a program to copy its input to its output, replacing each string of
+one or more blanks by a single blank. (rep_blank.c)
+
+1.10: Write a program to copy its input to its output, replacing each tab by \t,
+each backspace by \b, and each backslash by \\. This makes tabs and backspaces
+visible in an unambiguous way. (cat-v.c)
