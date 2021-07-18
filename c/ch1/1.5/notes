@@ -19,7 +19,9 @@ prints a character. So
 would print the value of the integer variable c.
 
 The simplest program leveraging these functions would be one which merely copies
-its input to its output:
+its input to its output.
+
+copying.c:
 
     #include <stdio.h>
 
@@ -67,6 +69,8 @@ input was EOF or not, and not the actual value of the input itself!
 
 But copying isn't all we can do! We are smart; we can also count!
 
+character_counting.c:
+
     #include <stdio.h>
 
     main() {
@@ -75,7 +79,7 @@ But copying isn't all we can do! We are smart; we can also count!
         nc = 0;
         while (getchar() != EOF)
             ++nc;
-        printf(%1d\n", nc);
+        printf(%ld\n", nc);
     }
 
 We have some new syntax here; ++nc is equivalent to nc = nc + 1, another way of
@@ -86,7 +90,7 @@ We use a long variable type here instead of our usual int because longs are at
 least as large as ints, but can be quite a bit larger (depending on the
 machine). Filling up the maximum value of an int (32767) can be quite trivial
 with a sufficiently motivated character stream. You could also use double if you
-anticipate even larger values.
+anticipate even larger values. Note that the printf() format for longs is %ld.
 
 Another way to write this loop, this time using for():
 
@@ -113,7 +117,9 @@ statement has a body. So we use the null statement to satisfy this requirement.
 In the everconstant trend towards increasing complexity, we can count lines!
 Remembering that the standard library guarantees that lines end with a newline
 character, we can leverage this fact to make the problem hinge on counting a
-single character:
+single character.
+
+line_counting.c:
 
     #include <stdio.h>
 
