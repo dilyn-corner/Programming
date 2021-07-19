@@ -1,8 +1,72 @@
-## A basic introduction ##
+## Arrays ##
 
+Suppose we wanted a program that counted the number of occurrences of each
+digit, of all of our possible white space characters (blanks, tabs, newlines),
+and every other character. There are twelve categories of input, so conveniently
+we can utilize something called an array to hold the number of each digit,
+instead of ten different variables.
+
+array_counting.c:
+
+    #include <stdio.h>
+
+    main() {
+        int c, i, nwhite, nother;
+        int ndigit[10];
+
+        nwhite = nother = 0;
+        for (i = 0; i < 10; ++i)
+            ndigit[i] = 0;
+
+        while (cc = getchar()) != EOF)
+            if (c >= '0' && c <= '9')
+                ++ndigit[c-'0'];
+            else if (c == ' ' || c == '\n' || c == '\t')
+                ++nwhite;
+            else
+                ++nother;
+
+        printf("digits =");
+        for (i = 0; i < 10; ++i)
+            printf(" %d", ndigit[i]);
+        printf(", white space = %d, other = %d\n", nwhite, nother);
+    }
+
+> int ndigit[10]
+
+This declares ndigit to be an array of ten integers. Arrays are indexed at zero,
+so each element in the array is ndigit[0], ndigit[1], ... ndigit[9].  The for()
+loop after "nwhite = nother = 0;" interates over the elements in the array and
+sets them to zero.  c-'0' is very cute. ndigit[c-'0'] corresponds to the c-'0'th
+number in our array! ++ndigit[c-'0'] means that we increment that number. If c
+is not a number but is instead a blank, a newline, or a tab, we increment that
+counter, and for any other character we increment a separate value.
+
+Within this while() loop, we have an
+
+> if (condition1)
+        statement1
+  else (condition2)
+        statement2
+  else
+        statement3
+
+pattern. We assess the veracity of these conditions one-by-one until the
+condition is satisfied, and its corresponding statement is performed. If none of
+the first conditions is true, then when we get to the final "else" we perform
+that action; if that final "else" had been left off, we simply wouldn't do
+anything!
+
+"switch" can also be useful in this particular case; a version of this program
+utilizing "switch" will be shown in ../../ch3/3.4/notes.
 
 ---
 
 ## Exercises ##
 
+1.13: Write a program to print a histogram of the lengths of words in its input.
+It is easy to draw the histogram with the bars horizontal; a vertical
+orientation is more challenging. (length_hist.c)
 
+1.14: Write a program to print a histogram of the frequencies of different
+characters in its input. (freq_hist.c)
