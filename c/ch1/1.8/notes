@@ -1,8 +1,50 @@
-## A basic introduction ##
+## Arguments - Call by Value ##
 
+There is a feature of C that is important to cover, namely how functions
+interact with their variables.
 
----
+Called functions cannot directly alter variables in the calling function -
+called functions only have access to their own private, temporary copy. Compare
+two versions of the power() function from the previous section; the first is the
+original code used, and the second is an example of the code making use of this
+private copy fact.
 
-## Exercises ##
+Original version:
+    power(int base, int n) {
+        int i, p;
 
+        p = 1;
+        for (i = 1; i <=n; ++i)
+            p = p * base;
+        return p;
+    }
 
+New version;
+    power(int base, int n) {
+        int p;
+
+        for (p = 1; n > 0; --n)
+            p = p * base
+        return p;
+    }
+
+Notice how "i" is dropped entire here. Because n is passed directly to power, we
+can simply make use of ourselves. Considering the definition of raising a number
+to a certain power, this is actually both a more economical use of language as
+well as a more obvious or natural understanding of exponentiation.
+
+Essentially: because n is passed to power() when it is called by some other
+function (in this case main()), we can leverage that value because modifying it
+within power() does not alter the value in main().
+
+There is, however, one exception to this, and it's very powerful. A function can
+modify a calling routine if the caller provides the memory address of the
+variable being set (that is to say, the caller provides a pointer to the
+variable). The called function must then declare the parameter to be a pointer
+and access the variable directly through it. Pointers will be covered more in
+../../ch5.
+
+Arrays are also an exception here -- when the name of an array is used as an
+argument, the value that gets passed to the function IS the beginning location
+address of the array; array elements are NOT copied. Thus, the called function
+can accessa nd alter any elemnt of the array.
