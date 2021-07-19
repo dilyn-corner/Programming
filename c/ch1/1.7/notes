@@ -1,8 +1,96 @@
-## A basic introduction ##
+## Functions ##
 
+Functions are an important feature of C. You can leverage functions all over in
+your code to accomplish small tasks whose results you can use for other tasks!
+It's all very cool.
+
+So far, we've been utilizing some functions defined in stdio.h, like printf(),
+getchar(), and putchar(). Let's make our own function! We can write a quick and
+simple one that performs exponentiation; there's already one in the standard
+library named pow(x,y), but we will pretend we have no idea it exists.
+
+power.c:
+
+    #include <stdio.h>
+
+    int power(int m, int n);
+
+    main() {
+        int i;
+
+        for (i = 0; i < 10; ++i)
+            printf("%d %d %d\n", i, power(2,i), power(-3,i));
+        return 0;
+    }
+
+    int power(int base, int n) {
+        int i, p;
+
+        p = 1;
+        for (i = 1; i <=n; ++i)
+            p = p * base;
+        return p;
+    }
+
+Functions are identified by a couple of things: return-type, function name, and
+parameters (if any).
+
+    > int power( int base, int n) {
+    >     declarations
+    >     statements
+    > }
+
+main() calls power twice, in our printf() line:
+
+    > printf("%d %d %d\n", i, power(2,i), power(-3,i));
+
+power() is being passed two values each time, 2 & i, and -3 & i. These values
+are ints, which is good (considering we're doing integer arithmetic in power()).
+For our function power(), we see that it has int as a return type, and it takes
+two arguments which are ints: base and n. Notice also that power() declares i
+and p as ints; these are private to power(), and can be used separately and
+distinctly from other functions which might use i or p themselves. Indeed, the i
+in power() is different from the i in main().
+
+The final statement in power(),
+
+    > return p;
+
+is *returned* to main() (see what they did there?).
+
+Some notes:
+    1) A function need not return a value
+        A return statement with no expression causes control, but no useful
+        value, to be returned to the caller.
+    2) The calling function can ignore a value returned by a function
+
+Notice that our main() function in this example program HAS a return; it returns
+p. All prior instances of main() thus far should probably have had a return
+value. main() returns its value to its caller (much like all other functions),
+which means that main()'s return value is given to the environment it was called
+from. A return value of zero implies normal termination, and a nonzero value
+implies some sort of error, failure, or other condition.
+
+The line
+
+    > int power(int m, int n);
+
+is a special one; it is called a function prototype, and it has to agree with
+the definition and use of power(). Thus, as power() is a function which returns
+an int and takes two integer arguments, we declare this with our power()
+function's corresponding prototype. It is an ERROR if any function or its uses
+disagree with its prototype.
+However, the parameter names don't have to agree. In fact, parameter names are
+optional in function prototypes, and so our declaration is identical to
+
+    > int power(int, int);
+
+Perhaps it is better to use parameter names for clarity's sake. Best practices
+should be followed, whatever they may be...
 
 ---
 
 ## Exercises ##
 
-
+1.15: Rewrite the temperature conversion program (../1.2/temp_conv.c) to use a
+function for conversion. (temp_conv.c)
