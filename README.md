@@ -8,13 +8,13 @@ I've never really been able to get into programming. The usual reason I give is
 because I have never come across a problem that programming would be an
 efficient solution for - most things I do, I only really do once. Writing an
 entire program to accomplish that task seems like a waste of time. The only
-exception thus far as been shell script.
+exception thus far has been shell script.
 
 But I've run into enough problems and reasons that make this lack of
 knowledge... problematic for future development. At the very least, knowing how
 to program in some valuable and important languages will make me more literate
-in the things I do day-to-day, patching software and understanding how certain
-programs operate.
+in the things I do day-to-day as a hobby, patching software and understanding
+how certain programs operate.
 
 ## This Repository
 
@@ -22,9 +22,9 @@ This repository will act as a collection of notes, resources, tests, use-cases,
 etc. For instance, the `c` directory is setup for those following the Bible on
 ANSI C (K&R). You'll notice that README files include paths; if you're using
 `vim`, you can use the `gf` binding to immediately checkout the referenced
-file (optimally `<C-W>gf`, or `:bf` to go back -- congratulations, you're learning
-`vim`!). The files are named `README` in this folder simply to make reading on
-places such as GitHub easier; think of them as indices and notes.
+file (optimally `<C-W>gf`, and `:bf` to go back -- congratulations, you're
+learning `vim`!). The files are named `README` in this folder simply to make
+reading on places such as GitHub easier; think of them as indices and notes.
 
 In addition to directories for independent languages, there is a folder named
 `exercism`. This folder will contain any languages I've used
