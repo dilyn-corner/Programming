@@ -6,7 +6,7 @@ A string literal is defined between double quotes:
 
 Some values need to be escaped:
 
-| Value | | Description |
+| Value | Description |
 | --- | --- |
 | `\a` | Alert or bell |
 | `\b` | Backspace |
@@ -50,3 +50,4 @@ import "strings"
 strings.ToLower("Gopher")    // Output: "gopher"
 strings.Index("Apple", "le") // Output: 3
 strings.Count("test", "t")   // Output: 2
+```
