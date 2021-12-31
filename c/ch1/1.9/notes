@@ -1,8 +1,138 @@
-## A basic introduction ##
+## Character Arrays ##
+
+Character arrays are the most common type of array in C. Knowing how to
+manipulate them is therefore very important. Let's use an example: a program
+which reads a set of text lines and prints the longest. The pseudo code might
+look like:
+
+while (there's another line)
+    if (it's longer than the previous longest)
+        save it
+        save its length
+print longest line
+
+Looking at this pseudo code, a few things jump out to us:
+    One part checks for a new line
+    One part tests a new line
+    One part saves facts about the line
+
+So let's make use of functions to provide these distinct features our program
+has! This will break our program up into logical sections, making its parts more
+salient and their purposes clear and distinct.
+
+For our function that checks for a new line, we can call it getLine(). We have
+two cases; either the line exists or it doesn't -- in the latter case, we've hit
+the end of the file. In any other case, we have either a blank line or some
+string, and for those cases the line is of at least length one (\n is a single
+character, after all). So if we hit EOF, getLine() can return zero; otherwise,
+getLine() can return the length of the line.
+
+If that line getLine() found is longer than the previous longest line, we need
+to save that line. Thus, we can use a function we can call copy() to tuck it
+away.
+
+Let's combine all of this together!
+
+long_line.c:
+
+#include <stdio.h>
+
+#define MAXLINE 1000 /* maximum input line size */
+
+/*
+ * Name it something other than getline() because that function was added
+ * to stdio.h in 2010 rip K&R https://c-for-dummies.com/blog/?p=1112
+ */
+int getLine(char line[], int maxline);
+void copy(char to[], char from[]);
+
+/* print longest input line */
+int main() {
+    int len;                /* current line length        */
+    int max;                /* maximum length seen so far */
+    char line[MAXLINE];     /* current input line         */
+    char longest[MAXLINE];  /* longest line saved here    */
+
+    max = 0;
+    while ((len = getLine(line, MAXLINE)) > 0)
+        if (len > max) {
+            max = len;
+            copy(longest, line);
+        }
+    if (max > 0)        /* there was a line */
+        printf("%s", longest);
+    return 0;
+}
+
+/* getLine: read a line into s, return length */
+int getLine(char s[], int lim) {
+    int c, i;
+
+    for (i = 0; i < lim-1 && (c = getchar()) != EOF && c != '\n'; ++i)
+        s[i] = c;
+    if ( c == '\n') {
+        s[i] = c;
+        ++i;
+    }
+    s[i] = '\0';
+    return i;
+}
+
+/* copy: copy 'from' into 'to'; assume to is big enough */
+void copy(char to[], char from[]) {
+    int i;
+
+    i = 0;
+    while ((to[i] = from[i]) != '\0')
+        ++i;
+}
+
+
+The arguments of getLine(), specified in
+
+    > int getLine(char s[], int lim)
+
+inform us that getLine() takes two arguments, one of which is an array and the
+other some integer. Why do we pass this size to getLine()? To set aside the
+storage for the array. getLine() also returns an integer to main(). But some
+functions DON'T return a value. Indeed, there is a way to specify such a fact,
+and we do so with our function copy(). We do this because we don't actually care
+about what copy() returns; it is only useful for what it does, not the
+evaluataion it finishes with. Perhaps think of it like, if function foo()
+doesn't have to return anything to its caller, foo() is void of a value.
+
+getLine() puts the null character, '\0', at the end of the array it creates. It
+does so to mark the end of the string of characters it reads. Indeed, this is
+used by C itself: when a string constant like "hello\n" appears in a C program,
+it is stored as an array of characters containing the characters of the string
+and terminated iwth a '\0' to mark the end. The %s format specifier for printf()
+expects a string of this form! copy() relies on the fact that its argument is
+terminated by the null character, and it copies this character into the output
+argument.
+
+There is a potential problem here. What happens when main() reads a line which
+is bigger than its limit? getLine() works safely because it stops collecting
+characters once the array is full, and so main() could test whether the line was
+too big, and resolve this... in some way. The problem is ignored in our code.
+
+There's no a priori way of knowing how big any line sent to getLine() will be,
+so it has to check for overflow. On the other hand, copy() already knows how big
+the strings are, so we don't have to check for any related errors.
 
 
 ---
 
 ## Exercises ##
 
+1.16: Revise the main routine of the longest-line program so it will correctly
+print the length of arbitrarily long input lines, and as much as possible of the
+test. (long_line_fix.c)
 
+1.17: Write a program to print all input lines that are longer than 80
+characters. (over_80.c)
+
+1.18: Write a program to remove trailing blanks and tabs from each line of
+input, and to delete entirely blank lines. (fix_blanks.c)
+
+1.19: Write a function reverse(s) that reverses the character string s. Use it
+to write a program that reverses its input a line at a time. (s_reversal.c)
