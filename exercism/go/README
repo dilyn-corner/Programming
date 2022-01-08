@@ -22,3 +22,9 @@ Methods/elons-toys/README.md             -- Methods, Man
 Errors/the-farm/README.md                -- Interface My Errors
 Types/sorting-room/README.md             -- Assert Your Conversions
 Zeroes/census/README.md                  -- Zeroing In
+Exercises/README.md                      -- A Variety of Challenges
+
+
+Language spec: https://go.dev/ref/spec
+Good praxis: https://go.dev/doc/effective_go
+Potentially informative: https://gobyexample.com/
