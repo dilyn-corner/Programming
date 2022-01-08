@@ -15,11 +15,11 @@ func main() {
 
     m := make(map[string]int) // alternatively m := map[string]int{}
 
-    m["k1"] = v1 // set the k1, v1 pair
-    m["k2"] = v2 // set the k2, v2 pair
+    m["k1"] = v1            // set the k1, v1 pair
+    m["k2"] = v2            // set the k2, v2 pair
 
-    fmt.Println("map:", m) // print the map:
-                           // map: map[k1:v1 k2:v2]
+    fmt.Println("map:", m)  // print the map:
+                            // map: map[k1:v1 k2:v2]
 
     u1 := m["k1"]           // assign u1 to the value of the k1 key's value
     fmt.Println("v1: ", u1) // Print the value assigned to u1:
@@ -29,7 +29,7 @@ func main() {
                                 // len: 2
                                 // len(m) is the number of key, value pairs
 
-    delete(m, "k2")         // The delete() builtin does what it says on the tin:
+    delete(m, "k2")         // The delete() builtin does what it says on the tin
     fmt.Println("map:", m)  // Print the freshly modified map:
                             // map: map[k1:v1]
 
@@ -40,8 +40,6 @@ func main() {
                                         // the map m which has a value.
                                         // Because we deleted the k2 key...
     fmt.Println("is present:", present) // present: false
-                                        // If we hadn't omitted the first return
-                                        // value, we would have been returned v2, true
 
     n := map[string]int{"foo": 1, "bar": 2} // A shortcut for map
                                             // creation & initialization

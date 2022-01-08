@@ -1,5 +1,5 @@
-The below license applies to all files in below this parent directory. Files
-named foo/foo.go are also this license, but:
+The below license applies to all files below this parent directory. Files
+named foo/foo.go are also this license, but with:
 
 Copyright (c) 2021-2022 Dilyn Corner
 

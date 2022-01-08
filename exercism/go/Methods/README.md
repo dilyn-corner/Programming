@@ -51,4 +51,5 @@ func main() {
 ```
 
 [A useful tour](https://go.dev/tour/methods/1).
+
 [Perhaps some more information](https://www.callicoder.com/golang-methods-tutorial/)

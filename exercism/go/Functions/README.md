@@ -1,6 +1,6 @@
 ### Baby Don't Func Me
 
-Basic, fundamentally syntax for functions:
+Fundamental syntax for functions:
 
 ```
 func Func(foo type1, baz type2) type3 { ... }
@@ -16,7 +16,11 @@ func FuncFanc(fizzbuzz, foobar type) (typeA, typeB) { ... }
 If you want more actual meaningful details, checkout... 
 
 [Error Handling!](/exercism/go/Errors/README.md)
+
 [Documenting!](/exercism/go/Comments/README.md)
+
 [Method Fuckery!](/exercism/go/Methods/README.md)
+
 [Explicit Example of Fuckery!](/exercism/go/Time/README.md)
+
 [Actual Useful Stuff](/exercism/go/Pointers/README.md)
