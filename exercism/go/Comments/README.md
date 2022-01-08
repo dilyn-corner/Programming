@@ -2,13 +2,13 @@
 
 Go provides two comment styles:
 
-/*
-
+```
+/* 
     Block comments
-
- */
+*/
 
 // Line comments
+```
 
 Line comments are the norm in Go. Block comments are mostly reserved for package
 comments.
