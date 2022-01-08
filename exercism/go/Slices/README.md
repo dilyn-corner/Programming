@@ -44,7 +44,7 @@ func main() {
     fmt.Println("sl1:", l)       // sl1: [c d e]
 
     l = s[:5]                    // l is a slice of s, [0, 5)
-    fmt.Println("sl2:", l)       // slt: [a b c d e]
+    fmt.Println("sl2:", l)       // sl2: [a b c d e]
 
     l = s[2:]                    // l is a slice of s, [2, len(s))
     fmt.Println("sl3:", l)       // sl3: [c d e f]
@@ -70,4 +70,5 @@ can be thought of in similar ways.
 
 
 [Slices, an exploration](https://go.dev/blog/slices-intro)
+
 [Cute tricks](https://github.com/golang/go/wiki/SliceTricks)

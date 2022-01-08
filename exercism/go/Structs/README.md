@@ -28,10 +28,10 @@ type*. We can create our `ross` struct and fill in the values in two ways:
 
 ```
 var ross Employee               |       ross := Employee {
-ross.firstName = "ross",        |           firstName: "ross",
-ross.LastName = "Bing",         |           lastName: "Bing",
-ross.salary = 1200,             |           salary: 1200,
-ross.fullTime = true,           |           fullTime: true,
+ross.firstName = "ross"         |           firstName: "ross",
+ross.LastName = "Bing"          |           lastName: "Bing",
+ross.salary = 1200              |           salary: 1200,
+ross.fullTime = true            |           fullTime: true,
                                 |       }
 ```
 

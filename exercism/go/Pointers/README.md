@@ -3,6 +3,7 @@
 A pointer simply holds the memory address of some value.
 
 The type `*T` is a pointer to a T value. The zero value of a pointer is nil:
+
 ```var p *int```
 
 The `&` operator generates a pointer to its operand:
@@ -40,17 +41,17 @@ func main() {
     fmt.Println("initial:", i) // 1
 
     zeroval(i)
-    fmt.Println("zeroval:", i) // 1 (the i passed to zeroval() is not modified by zeroval()
+    fmt.Println("zeroval:", i) // 1 (the i passed to zeroval() is not modified by zeroval())
 
     zeroptr(&i)
-    fmt.Println("zeroptr:", i) // 0 (the &i passed to zeroval() IS modified by zeroval()
+    fmt.Println("zeroptr:", i) // 0 (the &i passed to zeroval() IS modified by zeroval())
                                // In other words, the value assigned to the
                                // memory address at &i is modified by zeroval(),
                                // and then we print that value
 
     fmt.Println("pointer:", &i) // 0x42131100 <- the memory address
 }
-
+```
 
 
 [This might be useful](https://www.digitalocean.com/community/conceptual_articles/understanding-pointers-in-go).

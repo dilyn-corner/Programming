@@ -3,7 +3,7 @@
 Short declarations can precede if-statements:
 ```x := 4; if x < 0 { ... }```
 
-Conditions can can pretty wild:
+Conditions can be pretty wild:
 ```
 if condition1 {
     ...
@@ -35,6 +35,7 @@ switch {
     case foo > baz:
         return "phew"
 }
+```
 
 Switches can also include a `default:` case which will be what happens in case
 no other case holds.

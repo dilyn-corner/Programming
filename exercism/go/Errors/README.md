@@ -39,4 +39,5 @@ include such a case in our function's return values AND check for it. Genius.
 
 
 You can find a lot more interesting details [here](https://go.dev/blog/error-handling-and-go)
+
 Also some insights can be had [here](https://github.com/golang/go/wiki/Errors)

@@ -34,4 +34,4 @@ func main() {
 ```
 
 
-For an advanced version of `for`, checkout [Methods](/exercism/go/Methods/README.md)!
+For an advanced version of `for`, checkout [Iterations](/exercism/go/Iterations/chessboard/README.md)!

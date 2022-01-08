@@ -1,8 +1,11 @@
 ### Be Aware
 
 Go provides two comment styles:
+
 /*
+
     Block comments
+
  */
 
 // Line comments
