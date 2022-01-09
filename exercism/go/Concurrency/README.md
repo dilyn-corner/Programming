@@ -49,6 +49,7 @@ func main() {
     var input string
     fmt.Scanln(&input)
 }
+```
 
 However, if you run this program it might appear as though the goroutines are
 running sequentially instead of concurrently. If you sprinkle in some random
