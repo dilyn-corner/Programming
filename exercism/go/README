@@ -23,6 +23,8 @@ Errors/the-farm/README.md                -- Interface My Errors
 Types/sorting-room/README.md             -- Assert Your Conversions
 Zeroes/census/README.md                  -- Zeroing In
 Exercises/README.md                      -- A Variety of Challenges
+Concurrency/README.md                    -- The Cons of Speed
+IO/README.md                             -- Do You Wanna Read a File
 
 
 Language spec: https://go.dev/ref/spec
