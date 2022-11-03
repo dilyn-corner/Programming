@@ -1,0 +1,185 @@
+The Rust Programming Language -- https://doc.rust-lang.org/stable/book/title-page.html
+|-- Chapter 1:  Getting Started
+|---- ch1/1.1/README.md: Installation
+|---- ch1/1.2/README.md: Hello, World!
+|---- ch1/1.3/README.md: Hello, Cargo!
+|-- Chapter 2:  Programming a Guessing Game
+|---- ch2/README.md: Programming a Guessing Game
+|-- Chapter 3:  Common Programming Concepts
+|---- ch3/3.1/README.md: Variables and Mutability
+|---- ch3/3.2/README.md: Data Types
+|---- ch3/3.3/README.md: Functions
+|---- ch3/3.4/README.md: Comments
+|---- ch3/3.5/README.md: Control Flow
+|-- Chapter 4:  Understanding Ownership
+|---- ch4/4.1/README.md: What is Ownership?
+|---- ch4/4.2/README.md: References and Borrowing
+|---- ch4/4.3/README.md: The Slice Type
+|-- Chapter 5:  Using Structs to Structure Related Data
+|---- ch5/5.1/README.md: Defining and Instantiating Structs
+|---- ch5/5.2/README.md: An Example Program Using Structs
+|---- ch5/5.3/README.md: Method Syntax
+|-- Chapter 6:  Enums and Pattern Matching
+|---- ch6/6.1/README.md: Defining an Enum
+|---- ch6/6.2/README.md: The match Control Flow Struct
+|---- ch6/6.3/README.md: Concise Control Flow with if let
+|-- Chapter 7:  Managing Growing Projects with Packages, Crates, and Modules
+|---- ch7/7.1/README.md: Packages and Crates
+|---- ch7/7.2/README.md: Defining Modules to Control Scope
+|---- ch7/7.3/README.md: Paths for Referring to an Item in the Module Tree
+|---- ch7/7.4/README.md: Bringing Paths Into Scope with the use Keyword
+|---- ch7/7.5/README.md: Separating Modules Into Different Files
+|-- Chapter 8:  Common Collections
+|---- ch8/8.1/README.md: Storing Lists of Values with Vectors
+|---- ch8/8.2/README.md: Storing UTF-8 Encoded Text with Strings
+|---- ch8/8.3/README.md: Storing Keys iwth Associated Values in Hash Maps
+|-- Chapter 9:  Error Handling
+|---- ch9/9.1/README.md: Unrecoverable Errors with panic!
+|---- ch9/9.2/README.md: Recoverable Errors with Result
+|---- ch9/9.3/README.md: To panic! or Not to panic!
+|-- Chapter 10:  Generic Types, Traits, and Lifetimes
+|---- ch2/10.1/README.md: Generic Data Types
+|---- ch2/10.2/README.md: Traits: Defining Shared Behavior
+|---- ch2/10.3/README.md: Validating References with Lifetimes
+|-- Chapter 11:  Writing Automated Tests
+|---- ch11/11.1/README.md: How to Write Tests
+|---- ch11/11.2/README.md: Controlling How Tests are Run
+|---- ch11/11.3/README.md: Test Organization
+|-- Chapter 12:   An I/O Project: Building a Command Line Program
+|---- ch12/12.1/README.md: Accepting Command Line Arguments
+|---- ch12/12.2/README.md: Reading a File
+|---- ch12/12.3/README.md: Refactoring to Improve Modularity and Error Handling
+|---- ch12/12.4/README.md: Developign the Library's Functionality with Test Driven Development
+|---- ch12/12.5/README.md: Working with Environment Variables
+|---- ch12/12.6/README.md: Writing Error Messages to Standard Error Instead of Standard Output
+|-- Chapter 13:  Functional Language Features: Iterators and Closures
+|---- ch13/13.1/README.md: Closures: Anonymous Functions that Capture Their Environment
+|---- ch13/13.2/README.md: Processing a Series of Items with Iterators
+|---- ch13/13.3/README.md: Improving Our I/O Project
+|---- ch13/13.4/README.md: Comparing Performance: Loops vs. Iterators
+|-- Chapter 14:  More about Cargo and Crates.io
+|---- ch14/14.1/README.md: Customizing Builds with Release Profiles
+|---- ch14/14.2/README.md: Publishing a Crate to Crates.io
+|---- ch14/14.3/README.md: Cargo Workspaces
+|---- ch14/14.4/README.md: Installing BInaries from Crates.io with cargo install
+|---- ch14/14.5/README.md: Extending Cargo with Custom Commands
+|-- Chapter 15:  Smart Pointers
+|---- ch15/15.1/README.md: Using Box<T> to Point to Data on the Heap
+|---- ch15/15.2/README.md: Treating Smart Pointers Like Regular References with the Deref Trait
+|---- ch15/15.3/README.md: Running Code on Cleanup with the Drop Trait
+|---- ch15/15.4/README.md: Rc<T>, the Reference Counted Smart Pointer
+|---- ch15/15.5/README.md: RefCell<T> and the Interior Mutability Pattern
+|---- ch15/15.6/README.md: Reference Cycles Can Leak Memory
+|-- Chapter 16:  Fearless Concurrency
+|---- ch16/16.1/README.md: Using Threads to Run Code Simultaneously
+|---- ch16/16.2/README.md: Using Message Passing to Transfer Data Between Threads
+|---- ch16/16.3/README.md: Shared-State Concurrency
+|---- ch16/16.4/README.md: Extensible Concurrency with the Sync and Send Traits
+|-- Chapter 17:   Object Oriented Programming Features of Rust
+|---- ch17/17.1/README.md: Characterstics of Object-Oriented Languages
+|---- ch17/17.2/README.md: Using Trait Objects That Allow for Values of Different Types
+|---- ch17/17.3/README.md: Implementing an Object-Oriented Design Pattern
+|-- Chapter 18:  Patterns and Matching
+|---- ch18/18.1/README.md: All the Places Patterns Can Be Used
+|---- ch18/18.2/README.md: Refutability: Whether a Pattern Might Fail to Match
+|---- ch18/18.3/README.md: Pattern Syntax
+|-- Chapter 19:  Advanced Features
+|---- ch19/19.1/README.md: Unsafe Rust
+|---- ch19/19.2/README.md: Advanced Traits
+|---- ch19/19.3/README.md: Advanced Types
+|---- ch19/19.4/README.md: Advanced Functions and Closures
+|---- ch19/19.5/README.md: Macros
+|-- Chapter 20:  Final Project: Building a Multithreaded Web Server
+|---- ch20/20.1/README.md: Building a Single-Threaded Web Server
+|---- ch20/20.2/README.md: Turning Our Single-Threaded Server into a Multithreaded Server
+|---- ch20/20.3/README.md: Graceful Shutdown and Cleanup
+|-- Chapter 21:  Appendix
+|---- ch21/A/README.md: Keywords
+|---- ch21/B/README.md: Operators and Symbols
+|---- ch21/C/README.md: Derivable Traits
+|---- ch21/D/README.md: Useful Development Tools
+
+
+
+## Introduction
+
+In general, this book assumes that you’re reading it in sequence from front to
+back. Later chapters build on concepts in earlier chapters, and earlier chapters
+might not delve into details on a topic; we typically revisit the topic in a
+later chapter.
+
+You’ll find two kinds of chapters in this book: concept chapters and project
+chapters. In concept chapters, you’ll learn about an aspect of Rust. In project
+chapters, we’ll build small programs together, applying what you’ve learned so
+far. Chapters 2, 12, and 20 are project chapters; the rest are concept chapters.
+
+Chapter 1 explains how to install Rust, how to write a “Hello, world!” program,
+and how to use Cargo, Rust’s package manager and build tool. Chapter 2 is a
+hands-on introduction to the Rust language. Here we cover concepts at a high
+level, and later chapters will provide additional detail. If you want to get
+your hands dirty right away, Chapter 2 is the place for that. At first, you
+might even want to skip Chapter 3, which covers Rust features similar to those
+of other programming languages, and head straight to Chapter 4 to learn about
+Rust’s ownership system. However, if you’re a particularly meticulous learner
+who prefers to learn every detail before moving on to the next, you might want
+to skip Chapter 2 and go straight to Chapter 3, returning to Chapter 2 when
+you’d like to work on a project applying the details you’ve learned.
+
+Chapter 5 discusses structs and methods, and Chapter 6 covers enums, match
+expressions, and the if let control flow construct. You’ll use structs and enums
+to make custom types in Rust.
+
+In Chapter 7, you’ll learn about Rust’s module system and about privacy rules
+for organizing your code and its public Application Programming Interface (API).
+Chapter 8 discusses some common collection data structures that the standard
+library provides, such as vectors, strings, and hash maps. Chapter 9 explores
+Rust’s error-handling philosophy and techniques.
+
+Chapter 10 digs into generics, traits, and lifetimes, which give you the power
+to define code that applies to multiple types. Chapter 11 is all about testing,
+which even with Rust’s safety guarantees is necessary to ensure your program’s
+logic is correct. In Chapter 12, we’ll build our own implementation of a subset
+of functionality from the grep command line tool that searches for text within
+files. For this, we’ll use many of the concepts we discussed in the previous
+chapters.
+
+Chapter 13 explores closures and iterators: features of Rust that come from
+functional programming languages. In Chapter 14, we’ll examine Cargo in more
+depth and talk about best practices for sharing your libraries with others.
+Chapter 15 discusses smart pointers that the standard library provides and the
+traits that enable their functionality.
+
+In Chapter 16, we’ll walk through different models of concurrent programming and
+talk about how Rust helps you to program in multiple threads fearlessly. Chapter
+17 looks at how Rust idioms compare to object-oriented programming principles
+you might be familiar with.
+
+Chapter 18 is a reference on patterns and pattern matching, which are powerful
+ways of expressing ideas throughout Rust programs. Chapter 19 contains a
+smorgasbord of advanced topics of interest, including unsafe Rust, macros, and
+more about lifetimes, traits, types, functions, and closures.
+
+In Chapter 20, we’ll complete a project in which we’ll implement a low-level
+multithreaded web server!
+
+Finally, some appendices contain useful information about the language in a more
+reference-like format. Appendix A covers Rust’s keywords, Appendix B covers
+Rust’s operators and symbols, Appendix C covers derivable traits provided by the
+standard library, Appendix D covers some useful development tools, and Appendix
+E explains Rust editions. In Appendix F, you can find translations of the book,
+and in Appendix G we’ll cover how Rust is made and what nightly Rust is.
+
+There is no wrong way to read this book: if you want to skip ahead, go for it!
+You might have to jump back to earlier chapters if you experience any confusion.
+But do whatever works for you.
+
+
+An important part of the process of learning Rust is learning how to read the
+error messages the compiler displays: these will guide you toward working code.
+As such, we’ll provide many examples that don’t compile along with the error
+message the compiler will show you in each situation. Know that if you enter and
+run a random example, it may not compile! Make sure you read the surrounding
+text to see whether the example you’re trying to run is meant to error.
+
+
+! We assume at least Rust 1.62. The version of the book used is from 10/29/22 !
